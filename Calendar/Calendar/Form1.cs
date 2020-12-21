@@ -27,7 +27,7 @@ namespace Calendar
             loadMatrix();
             try
             {
-                DeserializeFromXML(filePath);
+               Job = DeserializeFromXML(filePath) as PlanData;
             }
             catch { setDefaultJob(); }
             }
@@ -76,6 +76,14 @@ namespace Calendar
                 Job = "Test Data",
                 Status = PlanItem.listStatus[(int)EPlanItem.COMING]
             });
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now.AddDays(-1),
+                StartTime = new Point(5, 0),
+                EndTime = new Point(5, 0),
+                Job = "Test Data",
+                Status = PlanItem.listStatus[(int)EPlanItem.COMING]
+            });
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -105,6 +113,7 @@ namespace Calendar
                 {
                     Button btn = new Button() { Width = Cons.DateButtonWidth, Height = Cons.DateButtonHeight };
                     btn.Location = new Point(oldBtn.Location.X + oldBtn.Width, oldBtn.Location.Y);
+                    btn.Click += btn_Click;
                     panelDayOfMonth.Controls.Add(btn);
                     Matrix[i].Add(btn);
                     oldBtn = btn;
@@ -123,6 +132,14 @@ namespace Calendar
 
             SetDefaultDay();
            // addNumberIntoMatrixByDate(dtPicker.Value);
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty((sender as Button).Text))
+                return;
+            Form2 daily = new Form2( new DateTime(dtPicker.Value.Year, dtPicker.Value.Month, Convert.ToInt32((sender as Button).Text)), Job);
+            daily.ShowDialog();
         }
 
 
