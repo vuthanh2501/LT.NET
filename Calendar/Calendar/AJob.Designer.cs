@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.nmToHours = new System.Windows.Forms.NumericUpDown();
-            this.nmToMinutes = new System.Windows.Forms.NumericUpDown();
+            this.statusBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nmToMinutes2 = new System.Windows.Forms.NumericUpDown();
+            this.nmToMinutes = new System.Windows.Forms.NumericUpDown();
             this.nmToHours2 = new System.Windows.Forms.NumericUpDown();
-            this.statusBox = new System.Windows.Forms.ComboBox();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmToHours)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmToMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmToMinutes2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmToMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmToHours2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +63,23 @@
             this.panel1.Size = new System.Drawing.Size(802, 27);
             this.panel1.TabIndex = 0;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(724, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(27, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(271, 22);
+            this.textBox1.TabIndex = 1;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -71,13 +88,16 @@
             this.checkBox1.Size = new System.Drawing.Size(18, 17);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox1
+            // btnEdit
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 22);
-            this.textBox1.TabIndex = 1;
+            this.btnEdit.Location = new System.Drawing.Point(643, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Lưu";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // nmToHours
             // 
@@ -87,12 +107,13 @@
             this.nmToHours.TabIndex = 0;
             this.nmToHours.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // nmToMinutes
+            // statusBox
             // 
-            this.nmToMinutes.Location = new System.Drawing.Point(346, 3);
-            this.nmToMinutes.Name = "nmToMinutes";
-            this.nmToMinutes.Size = new System.Drawing.Size(43, 22);
-            this.nmToMinutes.TabIndex = 1;
+            this.statusBox.FormattingEnabled = true;
+            this.statusBox.Location = new System.Drawing.Point(526, 3);
+            this.statusBox.Name = "statusBox";
+            this.statusBox.Size = new System.Drawing.Size(111, 24);
+            this.statusBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -110,38 +131,19 @@
             this.nmToMinutes2.Size = new System.Drawing.Size(44, 22);
             this.nmToMinutes2.TabIndex = 4;
             // 
+            // nmToMinutes
+            // 
+            this.nmToMinutes.Location = new System.Drawing.Point(346, 3);
+            this.nmToMinutes.Name = "nmToMinutes";
+            this.nmToMinutes.Size = new System.Drawing.Size(43, 22);
+            this.nmToMinutes.TabIndex = 1;
+            // 
             // nmToHours2
             // 
             this.nmToHours2.Location = new System.Drawing.Point(433, 2);
             this.nmToHours2.Name = "nmToHours2";
             this.nmToHours2.Size = new System.Drawing.Size(37, 22);
             this.nmToHours2.TabIndex = 3;
-            // 
-            // statusBox
-            // 
-            this.statusBox.FormattingEnabled = true;
-            this.statusBox.Location = new System.Drawing.Point(526, 3);
-            this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(111, 24);
-            this.statusBox.TabIndex = 5;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(643, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(724, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // AJob
             // 
@@ -153,8 +155,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmToHours)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmToMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmToMinutes2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmToMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmToHours2)).EndInit();
             this.ResumeLayout(false);
 

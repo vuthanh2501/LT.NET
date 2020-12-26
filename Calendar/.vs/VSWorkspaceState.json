@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Calendar"
   ],
-  "SelectedNode": "\\Calendar.sln",
+  "SelectedNode": "\\Calendar\\AJob.Designer.cs",
   "PreviewInSolutionExplorer": false
 }
