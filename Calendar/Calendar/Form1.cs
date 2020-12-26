@@ -42,7 +42,48 @@ namespace Calendar
                 Job = "Test Data", 
                 Status = PlanItem.listStatus[(int)EPlanItem.COMING]
             });
-            
+            Job = new PlanData();
+            Job.Job = new List<PlanItem>();
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now,
+                StartTime = new Point(5, 0),
+                EndTime = new Point(5, 0),
+                Job = "Test Data",
+                Status = PlanItem.listStatus[(int)EPlanItem.COMING]
+            });
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now,
+                StartTime = new Point(5, 0),
+                EndTime = new Point(5, 0),
+                Job = "Test Data",
+                Status = PlanItem.listStatus[(int)EPlanItem.COMING]
+            });
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now,
+                StartTime = new Point(5, 0),
+                EndTime = new Point(5, 0),
+                Job = "Test Data",
+                Status = PlanItem.listStatus[(int)EPlanItem.COMING]
+            });
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now,
+                StartTime = new Point(5, 0),
+                EndTime = new Point(5, 0),
+                Job = "Test Data",
+                Status = PlanItem.listStatus[(int)EPlanItem.COMING]
+            });
+            Job.Job.Add(new PlanItem()
+            {
+                Date = DateTime.Now.AddDays(-1),
+                StartTime = new Point(5, 0),
+                EndTime = new Point(5, 0),
+                Job = "Test Data",
+                Status = PlanItem.listStatus[(int)EPlanItem.COMING]
+            });
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
